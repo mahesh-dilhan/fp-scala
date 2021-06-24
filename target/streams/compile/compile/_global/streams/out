@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:18:48: unclosed string literal[0m
-[0m[[0m[31merror[0m] [0m[0m    RawUser("Vijay "Surasetti", "1-098-098-3000")[0m
-[0m[[0m[31merror[0m] [0m[0m                                               ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:18:21: ')' expected but string literal found.[0m
-[0m[[0m[31merror[0m] [0m[0m    RawUser("Vijay "Surasetti", "1-098-098-3000")[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
