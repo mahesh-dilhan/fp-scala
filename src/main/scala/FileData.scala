@@ -6,9 +6,10 @@ import scala.util.Try
 object FileData {
 
   def main(args: Array[String]): Unit = {
-    println("fp-programmng")
+    println("crazy functional programming with scalaz")
   }
-  println(RawData.generateRawUsers)
+  val emitRecords : () => Seq[RawUser] = Source.emit()
+ for( r <- emitRecords.apply()) println(transform(r))
 
   def transform(raw : RawUser) : TransformError \/ Domainuser = {
     val maybePerson : TransformError \/ Person = raw.person
@@ -18,6 +19,11 @@ object FileData {
   }
 }
 
+object Source {
+  def emit()(): Seq[RawUser] = {
+    RawData.generateRawUsers
+  }
+}
 
 
 object RawData {
@@ -30,7 +36,9 @@ object RawData {
 
 case class Domainuser (person: Person, phoneNumber: PhoneNumber)
 
-case class PhoneNumber(countryCode: Int, areaCode: Int, prefix:Int, line: Int )
+case class PhoneNumber(countryCode: Int, areaCode: Int, prefix:Int, line: Int ){
+  override def toString: String = s"${countryCode} (${areaCode}) ${prefix}-${line}"
+}
 
 case class Results(successes: Int, failuers: Int)
 case class TransformError(error: String)
@@ -52,7 +60,9 @@ object contact {
   }
 }
 
-case class Person (firstname: String, lastname: String)
+case class Person (firstname: String, lastname: String) {
+  override def toString: String = s"${firstname}, ${lastname}"
+}
 
 case class RawUser(
                   fullname: String,
