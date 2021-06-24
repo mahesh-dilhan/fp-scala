@@ -1,6 +1,8 @@
 import scalaz._
 import Scalaz._
 
+import scala.util.Try
+
 object FileData {
 
   def main(args: Array[String]): Unit = {
@@ -12,32 +14,30 @@ object FileData {
 object RawData {
 
   def generateRawUsers : Seq[RawUser] = Iterator(
-    RawUser("Mahesh", "Sameera", "1-098-098-3000") ,
-    RawUser("Vijay", "Surasetti", "1-098-098-3000")
+    RawUser("Mahesh Sameera", "1-098-098-3000") ,
+    RawUser("Vijay "Surasetti", "1-098-098-3000")
   ).toSeq
 }
 
-case class Domainuser (person: Person, phonenumber: Phonenumber)
+case class Domainuser (person: Person, phoneNumber: PhoneNumber)
 
-case class Phonenumber (countryCode: Int, areaCode: Int,prefix:Int, lineNumber: Int )
+case class PhoneNumber (countryCode: Int, areaCode: Int, prefix:Int, line: Int )
 
 case class Results(successes: Int, failuers: Int)
 case class TransformError(error: String)
 
-object Phonenumber {
+object phoneNumber {
   private val pattern = """(\d{1})-(\d{3})-(\d{3})-(\d{4})""".r
 
   def toInt(s: String) : TransformError \/ Int = {
-    scala.util.Try(s.toInt).toDisjunction.leftMap(e=> TransformError(e.getMessage))
+    Try(s.toInt).toDisjunction.leftMap(e=> TransformError(e.getMessage))
   }
 
-  def from(phonestring: String) : TransformError \/ Phonenumber ={
+  def from(phonestring: String) : TransformError \/ PhoneNumber ={
       phonestring match{
         case pattern(code, area, prefix, line) => {
-
-          //(toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line)) (Phonenumber)
-       //   (toInt(code),toInt(area),toInt(prefix),toInt(line))(Int)
-          \/-(Phonenumber(code.toInt,area.toInt,prefix.toInt, line.toInt))
+        //  \/-(Phonenumber(code.toInt,area.toInt,prefix.toInt, line.toInt))
+          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line))(PhoneNumber)
         }
         case _ => -\/(TransformError(s"phonenumber isnt match ${phonestring}"))
       }
@@ -47,9 +47,13 @@ object Phonenumber {
 case class Person (firstname: String, lastname: String)
 
 case class RawUser(
-                  firstname: String,
-                  lastname: String,
+                  fullname: String,
                   phone: String
                   ) {
-  //lazy  val person : Person =???
+  lazy  val person :  TransformError \/ Person = {
+    fullname.split(" ").toList match {
+      case first :: last :: Nil => \/-(Person(first,last))
+      case _ => -\/(TransformError("Failed to parse person"))
+    }
+  }
 }

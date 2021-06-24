@@ -1,6 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:37:76: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Phonenumber.type[0m
-[0m[[0m[31merror[0m] [0m[0m required: (Int, Int, Int, Int) => Phonenumber[0m
-[0m[[0m[31merror[0m] [0m[0m          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line)) (Phonenumber)[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:41:72: TransformError \/ Int does not take parameters[0m
+[0m[[0m[31merror[0m] [0m[0m          toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line)(Phonenumber)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                       ^[0m
 [0m[[0m[31merror[0m] [0m[0mone error found[0m
