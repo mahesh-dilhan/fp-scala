@@ -1,4 +1,16 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:36:19: identifier expected but 'match' found.[0m
-[0m[[0m[31merror[0m] [0m[0m      phonenumber.match{[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:30:15: not found: value toInt[0m
+[0m[[0m[31merror[0m] [0m[0m  private val toInt(s: String) : TransformError \/ Int = {[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:37:12: not found: value toInt[0m
+[0m[[0m[31merror[0m] [0m[0m          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line) )(Phonenumber)[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:37:28: not found: value toInt[0m
+[0m[[0m[31merror[0m] [0m[0m          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line) )(Phonenumber)[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:37:44: not found: value toInt[0m
+[0m[[0m[31merror[0m] [0m[0m          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line) )(Phonenumber)[0m
+[0m[[0m[31merror[0m] [0m[0m                                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:37:62: not found: value toInt[0m
+[0m[[0m[31merror[0m] [0m[0m          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line) )(Phonenumber)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m5 errors found[0m
