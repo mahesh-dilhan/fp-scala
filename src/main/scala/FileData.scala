@@ -34,7 +34,10 @@ object Phonenumber {
   def from(phonestring: String) : TransformError \/ Phonenumber ={
       phonestring match{
         case pattern(code, area, prefix, line) => {
-          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line)) (Phonenumber)
+
+          //(toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line)) (Phonenumber)
+       //   (toInt(code),toInt(area),toInt(prefix),toInt(line))(Int)
+          \/-(Phonenumber(code.toInt,area.toInt,prefix.toInt, line.toInt))
         }
         case _ => -\/(TransformError(s"phonenumber isnt match ${phonestring}"))
       }
