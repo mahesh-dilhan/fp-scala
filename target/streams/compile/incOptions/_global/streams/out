@@ -6,6 +6,20 @@
 [0m[[0m[0mdebug[0m] [0m[0m	FileData$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	FileData.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	FileData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Phonenumber.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TransformError$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RawUser.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	FileData$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Results$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RawUser$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Results.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RawData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Domainuser$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Person.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Phonenumber$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Domainuser.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FileData.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Person$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	RawData$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TransformError.class[0m
 [0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.13/classes.bak[0m
