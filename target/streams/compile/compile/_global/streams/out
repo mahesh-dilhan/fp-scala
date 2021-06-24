@@ -1,5 +1,4 @@
-[0m[[0m[33mwarn[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:29:8: Generated class phonenumber$ differs only in case from PhoneNumber$.[0m
-[0m[[0m[33mwarn[0m] [0m[0m  Such classes will overwrite one another on case-insensitive filesystems.[0m
-[0m[[0m[33mwarn[0m] [0m[0mobject phonenumber {[0m
-[0m[[0m[33mwarn[0m] [0m[0m       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/mahesh/play/scala-fp/fp-filereader/src/main/scala/FileData.scala:15:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef transform(raw : RawUser) : TransformError \/ Domainuser = {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

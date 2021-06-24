@@ -10,14 +10,15 @@ object FileData {
   }
   println(RawData.generateRawUsers)
 
+  def transform(raw : RawUser) : TransformError \/ Domainuser = {
+    val maybePerson : TransformError \/ Person = raw.person
+    val maybePhone : TransformError \/ PhoneNumber = contact.from(raw.phone)
+
+    (maybePerson |@| maybePhone)(Domainuser)
+  }
 }
 
-def transform(raw : RawUser) : TransformError \/ Domainuser = {
-  val maybePerson : TransformError \/ Person = raw.person
-  val maybePhone : TransformError \/ PhoneNumber = contact.from(raw.phone)
 
-  (maybePerson |@| maybePhone)(Domainuser)
-}
 
 object RawData {
 
