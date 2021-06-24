@@ -15,7 +15,7 @@ object RawData {
 
   def generateRawUsers : Seq[RawUser] = Iterator(
     RawUser("Mahesh Sameera", "1-098-098-3000") ,
-    RawUser("Vijay "Surasetti", "1-098-098-3000")
+    RawUser("Vijay Surasetti", "1-098-098-3000")
   ).toSeq
 }
 
