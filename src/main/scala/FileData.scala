@@ -1,5 +1,7 @@
 import scalaz._
 
+import scala.util.Try
+
 object FileData {
 
   def main(args: Array[String]): Unit = {
@@ -26,8 +28,18 @@ case class TransformError(error: String)
 object Phonenumber {
   private val pattern = """(\d{1})-(\d{3})-(\d{3})-(\d{4})""".r
 
-  def from(phonenumber: String) : TransformError \/ Phonenumber ={
+  private val toInt(s: String) : TransformError \/ Int = {
+    Try(s.toInt).toDisjunsction.leftMap(e=> TransformError(e.getMessage))
+  }
 
+  def from(phonenumber: String) : TransformError \/ Phonenumber ={
+      phonenumber.match{
+        case pattern(code, area, prefix, line) =>{
+          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line) )(Phonenumber)
+          Phonenumber(code.toInt, area.toInt, prefix.toInt, line.toInt)
+        }
+        case _ => -\/(TransformError(s"phonenumber isnt match ${phonenumber}"))
+      }
   }
 }
 
