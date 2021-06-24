@@ -6,16 +6,24 @@ import scala.util.Try
 object FileData {
 
   def main(args: Array[String]): Unit = {
-    print("fp-programmng")
+    println("fp-programmng")
   }
   println(RawData.generateRawUsers)
+
+}
+
+def transform(raw : RawUser) : TransformError \/ Domainuser = {
+  val maybePerson : TransformError \/ Person = raw.person
+  val maybePhone : TransformError \/ PhoneNumber = contact.from(raw.phone)
+
+  (maybePerson |@| maybePhone)(Domainuser)
 }
 
 object RawData {
 
   def generateRawUsers : Seq[RawUser] = Iterator(
-    RawUser("Mahesh Sameera", "1-098-098-3000") ,
-    RawUser("Vijay Surasetti", "1-098-098-3000")
+    RawUser("Mahesh Sameera", "1-098-098-3000"),
+    RawUser("Vijay Surasetti", "1-098-098-3000"),
   ).toSeq
 }
 
@@ -36,7 +44,6 @@ object contact {
   def from(phonestring: String) : TransformError \/ PhoneNumber ={
       phonestring match{
         case pattern(code, area, prefix, line) => {
-        //  \/-(Phonenumber(code.toInt,area.toInt,prefix.toInt, line.toInt))
           (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line))(PhoneNumber)
         }
         case _ => -\/(TransformError(s"phonenumber isnt match ${phonestring}"))
