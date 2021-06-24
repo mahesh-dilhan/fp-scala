@@ -19,25 +19,25 @@ object RawData {
   ).toSeq
 }
 
-case class Domainuser (person: Person, phoneNumber: PhoneNumberClass)
+case class Domainuser (person: Person, phoneNumber: PhoneNumber)
 
-case class PhoneNumberClass(countryCode: Int, areaCode: Int, prefix:Int, line: Int )
+case class PhoneNumber(countryCode: Int, areaCode: Int, prefix:Int, line: Int )
 
 case class Results(successes: Int, failuers: Int)
 case class TransformError(error: String)
 
-object PhoneNumber {
+object phonenumber {
   private val pattern = """(\d{1})-(\d{3})-(\d{3})-(\d{4})""".r
 
   def toInt(s: String) : TransformError \/ Int = {
     Try(s.toInt).toDisjunction.leftMap(e=> TransformError(e.getMessage))
   }
 
-  def from(phonestring: String) : TransformError \/ PhoneNumberClass ={
+  def from(phonestring: String) : TransformError \/ PhoneNumber ={
       phonestring match{
         case pattern(code, area, prefix, line) => {
         //  \/-(Phonenumber(code.toInt,area.toInt,prefix.toInt, line.toInt))
-          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line))(PhoneNumberClass)
+          (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line))(PhoneNumber)
         }
         case _ => -\/(TransformError(s"phonenumber isnt match ${phonestring}"))
       }
