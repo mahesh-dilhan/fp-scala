@@ -1,0 +1,1 @@
+### Crazy Scalaz functional programming ###
