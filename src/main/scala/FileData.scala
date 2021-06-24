@@ -27,10 +27,10 @@ object Source {
 
 
 object RawData {
-
   def generateRawUsers : Seq[RawUser] = Iterator(
     RawUser("Mahesh Sameera", "1-098-098-3000"),
-    RawUser("Vijay Surasetti", "1-098-098-3000"),
+    RawUser("Vijay ", "10-098-098-3000"),
+    RawUser("Shawn Sasuke", "1-098-098-3000"),
   ).toSeq
 }
 
@@ -55,7 +55,7 @@ object contact {
         case pattern(code, area, prefix, line) => {
           (toInt(code) |@| toInt(area) |@| toInt(prefix) |@| toInt(line))(PhoneNumber)
         }
-        case _ => -\/(TransformError(s"phonenumber isnt match ${phonestring}"))
+        case _ => -\/(TransformError(s"phone number isn't match ${phonestring}"))
       }
   }
 }

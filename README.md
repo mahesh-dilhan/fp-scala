@@ -1,1 +1,1 @@
-### Crazy Scalaz functional programming ###
+### Domain Modeling with help of Crazy Scalaz functional programming ###
