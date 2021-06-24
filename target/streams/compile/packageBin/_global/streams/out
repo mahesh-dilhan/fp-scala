@@ -1,7 +1,5 @@
 [0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/filereader_2.12-0.1.jar ...[0m
 [0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
-[0m[[0m[0mdebug[0m] [0m[0m	PhoneNumberClass$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/PhoneNumberClass$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Results$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/Results$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	FileData.class[0m
@@ -22,8 +20,6 @@
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/Person.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	RawUser$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/RawUser$.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	PhoneNumberClass.class[0m
-[0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/PhoneNumberClass.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	Domainuser$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	  /Users/mahesh/play/scala-fp/fp-filereader/target/scala-2.12/classes/Domainuser$.class[0m
 [0m[[0m[0mdebug[0m] [0m[0m	RawData$.class[0m

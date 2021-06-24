@@ -26,7 +26,7 @@ case class PhoneNumber(countryCode: Int, areaCode: Int, prefix:Int, line: Int )
 case class Results(successes: Int, failuers: Int)
 case class TransformError(error: String)
 
-object phonenumber {
+object contact {
   private val pattern = """(\d{1})-(\d{3})-(\d{3})-(\d{4})""".r
 
   def toInt(s: String) : TransformError \/ Int = {
